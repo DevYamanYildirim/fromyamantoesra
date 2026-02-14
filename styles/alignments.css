@@ -1,0 +1,57 @@
+.fix-top {
+  position: fixed;
+  top: 0.5rem;
+  right: 0;
+  z-index: 1000;
+}
+
+.abs-left {
+  left: 0;
+}
+
+.abs-top {
+  top: 0;
+}
+
+.abs-right {
+  right: 0;
+}
+
+.abs-bottom {
+  bottom: 0;
+}
+
+/* alignment */
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-top {
+  align-items: last start !important;
+}
+
+.align-items-bottom {
+  align-items: last baseline !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+/* text alignments */
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+.text-align-bottom {
+  text-align: start;
+}
+
+.text-align-center {
+  text-align: center;
+}

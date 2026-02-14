@@ -1,0 +1,42 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+body {
+  border-collapse: collapse;
+  font-family: var(--do-font-family);
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: var(--do-font-size);
+}
+
+/* font styles */
+.font-title {
+  font-size: 44px !important;
+  font-weight: 700 !important;
+}
+
+.font-header {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.font-sub {
+  font-size: 16px;
+  font-weight: 150;
+}
+
+.font-menu {
+  font-size: 16px;
+}
+
+.font-light {
+  font-size: 12px;
+}

@@ -1,0 +1,27 @@
+.centerBox {
+  margin: 0 auto;
+}
+
+.cardDimensions {
+  width: 300px;
+  height: 450px;
+}
+
+.color-background-grey {
+  background-color: rgb(244, 240, 228) !important;
+  opacity: 1;
+}
+
+.color-background-card {
+  background-color: rgb(236, 143, 141) !important;
+  opacity: 1;
+}
+
+.font-color-white {
+  color: rgb(244, 240, 228) !important;
+}
+
+.photo-card {
+  width: 100px;
+  height: 100px;
+}

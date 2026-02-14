@@ -1,0 +1,52 @@
+/* font colors */
+
+.font-color-brand {
+  color: var(--do-color-brand) !important;
+}
+
+.font-color-light {
+  color: var(--do-color-light) !important;
+}
+
+.font-color-focus {
+  color: var(--do-color-focus) !important;
+}
+
+.font-color-background {
+  color: var(--do-color-background) !important;
+}
+
+.font-color-white {
+  color: white !important;
+}
+
+/* background colors */
+
+.color-brand {
+  background-color: var(--do-color-brand) !important;
+  opacity: 1;
+}
+
+.color-light {
+  background-color: var(--do-color-light) !important;
+  opacity: 1;
+}
+
+.color-focus {
+  background-color: var(--do-color-focus) !important;
+  opacity: 1;
+}
+
+.color-background {
+  background-color: var(--do-color-background) !important;
+  opacity: 1;
+}
+
+.color-white {
+  background-color: white !important;
+  opacity: 1;
+}
+
+.transparent-ice {
+  opacity: 0.97;
+}

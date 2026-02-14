@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/variable.css" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/alignments.css" />
+    <link rel="stylesheet" href="./styles/borders.css" />
+    <link rel="stylesheet" href="./styles/colors.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/spacing.css" />
+
+    <title>Login</title>
+  </head>
+  <body class="background-main">
+    <header
+      id="mainHeader"
+      class="fix-top flex-row align-items-center g-2 p-2 color-white border shadow-lg circle-left transparent-ice"
+    ></header>
+    <div id="app"></div>
+    <main id="mainContent" class="flex align-items-center"></main>
+  </body>
+  <script
+    async
+    crossorigin="anonymous"
+    data-clerk-publishable-key="pk_test_ZnVuLWRvcnktOTguY2xlcmsuYWNjb3VudHMuZGV2JA"
+    src="https://fun-dory-98.clerk.accounts.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
+    type="text/javascript"
+  ></script>
+  <!-- Rest of your HTML file -->
+
+  <script>
+    window.addEventListener('load', async function () {
+      await Clerk.load();
+
+      console.log('ClerkJS is loaded');
+    });
+  </script>
+
+  <script>
+    window.addEventListener('load', async function () {
+      await Clerk.load();
+
+      if (Clerk.isSignedIn) {
+        document.getElementById('app').innerHTML = `
+        <div id="user-button"></div>
+      `;
+
+        const userButtonDiv = document.getElementById('user-button');
+
+        Clerk.mountUserButton(userButtonDiv);
+      } else {
+        document.getElementById('app').innerHTML = `
+        <div id="sign-in"></div>
+      `;
+
+        const signInDiv = document.getElementById('sign-in');
+
+        Clerk.mountSignIn(signInDiv);
+      }
+    });
+  </script>
+  <!-- <script src="./scripts/localStorageVariables.js"></script> -->
+  <script src="./scripts/Common/brandLogo.js"></script>
+  <!-- <script src="./scripts/Common/navigationMenus.js"></script> -->
+  <!-- <script src="./scripts/login.js"></script> -->
+</html>

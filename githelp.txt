@@ -1,5 +1,5 @@
 git add .
-git commit -m "first commit from VSCode"
+git commit -m "first draft"
 git push
 
 1 Check if Git sees your changes

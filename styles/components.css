@@ -1,0 +1,103 @@
+/* anchors */
+a {
+  text-decoration: none;
+  color: var(--do-color-light);
+  border-radius: var(--do-border-radius);
+  padding: 0.25rem 0.5rem;
+}
+
+a:hover {
+  color: var(--do-color-black);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input {
+  font-size: 16px;
+}
+
+/* buttons */
+.button-blank {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* menu */
+.menu {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  background-color: white;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  width: 120px;
+}
+
+.menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* displays */
+
+.hide {
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex !important;
+}
+
+/* flex */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+  transition: flex 0.5s ease;
+  overflow: hidden;
+}
+
+.flex-01 {
+  transition: flex 0.5s ease;
+  flex: 0.1;
+}
+
+/* shadows */
+
+.shadow {
+  box-shadow: var(--do-box-shadow-sm) !important;
+}
+
+.shadow-lg {
+  box-shadow: var(--do-box-shadow-lg) !important;
+}
+
+.shadow-inset {
+  box-shadow: var(--do-box-shadow-inset) !important;
+}
