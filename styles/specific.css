@@ -1,6 +1,6 @@
 .centerBox {
-  margin: 0 auto;
   max-width: 300px;
+  margin: auto;
 }
 
 .cardDimensions {
@@ -25,4 +25,21 @@
 .photo-card {
   width: 100px;
   height: 100px;
+}
+button {
+  transition:
+    filter 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+button:active {
+  background-color: rgb(68, 161, 148) !important;
+  color: rgb(244, 240, 228) !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.18);
+  transform: scale(0.98);
 }
