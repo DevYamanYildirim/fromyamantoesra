@@ -3,6 +3,7 @@
 }
 
 .cardDimensions {
+  max-width: 350px;
   width: 300px;
   height: 450px;
 }
