@@ -41,12 +41,32 @@ function initPhotos() {
 
     img.classList.add('photo-img');
 
+    const svg = document.createElement('img');
+    svg.style.opacity = '0';
+    svg.classList.add('result-icon');
+
     if (!images[index].includes('esra')) {
       img.style.filter = 'brightness(0.5)';
+      svg.src = './svg/x-circle.svg';
+      // svg.fill = rgb(255, 0, 0);
+    } else {
+      svg.src = './svg/check-circle.svg';
+      // svg.fill = rgb(68, 161, 148);
     }
 
     card.textContent = '';
     card.appendChild(img);
+    card.appendChild(svg);
+
+    img.addEventListener('click', () => {
+      svg.style.opacity = '1';
+      card.classList.remove('border');
+      if (!images[index].includes('esra')) {
+        card.classList.add('border-wrong');
+      } else {
+        card.classList.add('border-true');
+      }
+    });
   });
 }
 
