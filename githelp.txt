@@ -1,0 +1,38 @@
+git add .
+git commit -m "first commit from VSCode"
+git push
+
+1 Check if Git sees your changes
+
+  Run this in the project folder:
+  If you see file names listed, Git has detected changes.
+
+  git status
+
+2 Stage the changes
+
+  Tell Git which changes you want to send:
+  This selects all modified files:
+
+  git add .
+
+3 Create a commit
+
+  Give the change a short description:
+  The message just helps you remember what changed.
+
+  git commit -m "Update pricing page"
+
+4 Push to GitHub
+
+  Send the commit to GitHub:
+
+  git push
+
+
+One sentence to remember
+
+Edit
+→ add
+→ commit
+→ push
