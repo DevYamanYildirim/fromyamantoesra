@@ -90,9 +90,13 @@ function initPhotos() {
         if (correctSelections === totalCorrect) {
           totalTry++;
           if (totalTry === 3) {
-            const photoDiv = document.getElementById('photoDiv');
-            titleDiv.textContent = 'you did it!';
-            photoDiv.innerHTML = '';
+            const robotDiv = document.getElementById('robotDiv');
+            const exitMessage = document.getElementById('exitMessage');
+
+            titleDiv.textContent = 'Of course it was you!';
+
+            robotDiv.innerHTML = '';
+            exitMessage.classList.remove('hide');
           } else {
             setTimeout(initPhotos, 500);
           }
