@@ -1,8 +1,9 @@
 initPhotos();
+let totalTry = 0;
 
 function initPhotos() {
   const photoCards = document.querySelectorAll('.photo-card');
-  titleDiv = document.getElementById('title');
+  const titleDiv = document.getElementById('title');
 
   let images = [
     './images/download (1).jpeg',
@@ -35,21 +36,30 @@ function initPhotos() {
 
   images = shuffle(images);
 
-  photoCards.forEach((card, index) => {
-    const img = document.createElement('img');
-    img.src = images[index];
-    img.alt = '';
+  const visibleImages = images.slice(0, photoCards.length);
+  const totalCorrect = visibleImages.filter((src) =>
+    src.includes('esra'),
+  ).length;
+  let correctSelections = 0;
 
+  photoCards.forEach((card, index) => {
+    card.classList.remove('locked', 'border-wrong', 'border-true');
+    card.classList.add('border');
+
+    const img = document.createElement('img');
+    img.src = visibleImages[index];
+    img.alt = '';
     img.classList.add('photo-img');
 
     const svg = document.createElement('img');
     svg.style.opacity = '0';
     svg.classList.add('result-icon');
 
-    if (!images[index].includes('esra')) {
+    if (!visibleImages[index].includes('esra')) {
       img.style.filter = 'brightness(0.5)';
       svg.src = './svg/x-circle.svg';
     } else {
+      img.style.filter = '';
       svg.src = './svg/check-circle.svg';
     }
 
@@ -58,9 +68,15 @@ function initPhotos() {
     card.appendChild(svg);
 
     img.addEventListener('click', () => {
+      if (card.classList.contains('locked')) return;
+      card.classList.add('locked');
+
       svg.style.opacity = '1';
       card.classList.remove('border');
-      if (!images[index].includes('esra')) {
+
+      const isEsra = visibleImages[index].includes('esra');
+
+      if (!isEsra) {
         card.classList.add('border-wrong');
         titleDiv.textContent = 'wrong...';
         titleDiv.style.color = 'rgb(255, 0, 0)';
@@ -68,6 +84,19 @@ function initPhotos() {
         card.classList.add('border-true');
         titleDiv.textContent = 'correct!';
         titleDiv.style.color = 'rgb(34, 197, 94)';
+
+        correctSelections++;
+
+        if (correctSelections === totalCorrect) {
+          totalTry++;
+          if (totalTry === 3) {
+            const photoDiv = document.getElementById('photoDiv');
+            titleDiv.textContent = 'you did it!';
+            photoDiv.innerHTML = '';
+          } else {
+            setTimeout(initPhotos, 500);
+          }
+        }
       }
 
       titleDiv.classList.remove('animate');
