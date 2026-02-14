@@ -2,6 +2,7 @@ initPhotos();
 
 function initPhotos() {
   const photoCards = document.querySelectorAll('.photo-card');
+  titleDiv = document.getElementById('title');
 
   let images = [
     './images/download (1).jpeg',
@@ -48,10 +49,8 @@ function initPhotos() {
     if (!images[index].includes('esra')) {
       img.style.filter = 'brightness(0.5)';
       svg.src = './svg/x-circle.svg';
-      // svg.fill = rgb(255, 0, 0);
     } else {
       svg.src = './svg/check-circle.svg';
-      // svg.fill = rgb(68, 161, 148);
     }
 
     card.textContent = '';
@@ -63,9 +62,17 @@ function initPhotos() {
       card.classList.remove('border');
       if (!images[index].includes('esra')) {
         card.classList.add('border-wrong');
+        titleDiv.textContent = 'wrong...';
+        titleDiv.style.color = 'rgb(255, 0, 0)';
       } else {
         card.classList.add('border-true');
+        titleDiv.textContent = 'correct!';
+        titleDiv.style.color = 'rgb(34, 197, 94)';
       }
+
+      titleDiv.classList.remove('animate');
+      void titleDiv.offsetWidth;
+      titleDiv.classList.add('animate');
     });
   });
 }

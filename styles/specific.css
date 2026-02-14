@@ -77,3 +77,14 @@ button:active {
 .border-true {
   border: 4px solid rgb(68, 161, 148) !important;
 }
+
+#title {
+  transition:
+    color 0.25s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+#title.animate {
+  transform: scale(1.05);
+}
