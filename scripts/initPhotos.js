@@ -20,10 +20,18 @@ function initPhotos() {
   ];
 
   photoCards.forEach((card) => {
-    const randomImage = images[Math.floor(Math.random() * images.length)];
+    const randomName = images[Math.floor(Math.random() * images.length)];
+    console.log(randomName);
 
-    card.style.backgroundImage = `url(${randomImage})`;
-    card.style.backgroundSize = 'cover';
-    card.style.backgroundPosition = 'center';
+    const img = document.createElement('img');
+    img.src = randomName;
+    img.alt = '';
+
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'cover';
+
+    card.textContent = '';
+    card.appendChild(img);
   });
 }
