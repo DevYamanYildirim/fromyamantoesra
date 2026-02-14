@@ -91,12 +91,13 @@ function initPhotos() {
           totalTry++;
           if (totalTry === 3) {
             const robotDiv = document.getElementById('robotDiv');
-            const exitMessage = document.getElementById('exitMessage');
-
+            const exitMessage1 = document.getElementById('exitMessage1');
+            const exitMessage2 = document.getElementById('exitMessage2');
             titleDiv.textContent = 'Of course it was you!';
 
             robotDiv.innerHTML = '';
-            exitMessage.classList.remove('hide');
+            exitMessage1.classList.remove('hide');
+            exitMessage2.classList.remove('hide');
           } else {
             setTimeout(initPhotos, 500);
           }
